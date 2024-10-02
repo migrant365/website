@@ -1,0 +1,92 @@
+/* Home Section General Layout */
+.bl-home-section {}
+
+/* Typography Styles */
+.bl-home-section__subtitle {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #3c486b !important;
+}
+
+.bl-home-section__title {
+    color: #3c486b !important;
+    font-weight: 500 !important;
+}
+
+.bl-home-section__text-container {
+    width: 500px !important;
+    margin-top: 36px !important;
+}
+
+.bl-home-section__text {
+    font-size: 16px !important;
+    color: #3c486b99 !important;
+}
+
+/* Button Container */
+.bl-home-section__button-container {
+    margin-top: 36px !important;
+}
+
+/* Testimonial Section */
+.bl-home-section__testimonial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bl-home-section__testimonial-background {
+    width: 100%;
+    max-width: 370px;
+    height: 220px;
+    background-color: #3c486b;
+    background-image: url('https://images.pexels.com/photos/6803525/pexels-photo-6803525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Testimonial Arrows */
+.bl-home-section__testimonial-arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bl-home-section__testimonial-arrow--left {
+    border-left: 20px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: 54px;
+}
+
+.bl-home-section__testimonial-arrow--right {
+    border-right: 20px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: 54px;
+}
+
+/* Testimonial Content */
+.bl-home-section__testimonial-content {
+    width: 370px;
+    height: 220px;
+    border-radius: 8px;
+    background-color: #3c486b;
+    padding: 24px;
+    color: white;
+}
+
+.bl-home-section__testimonial-info {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}

@@ -1,0 +1,91 @@
+/* Personal Section General Layout */
+.bl-personal-section {}
+
+/* Typography Styles */
+.bl-personal-section__subtitle {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #3c486b !important;
+}
+
+.bl-personal-section__title {
+    color: #3c486b !important;
+    font-weight: 500 !important;
+}
+
+.bl-personal-section__text-container {
+    width: 500px !important;
+    margin-top: 36px !important;
+}
+
+.bl-personal-section__text {
+    font-size: 16px !important;
+    color: #3c486b99 !important;
+}
+
+/* Button Container */
+.bl-personal-section__button-container {
+    margin-top: 36px !important;
+}
+
+/* Testimonial Section */
+.bl-personal-section__testimonial {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bl-personal-section__background {
+    width: 100%;
+    max-width: 420px;
+    height: 370px;
+    background-color: #3c486b;
+    background-image: url('https://images.pexels.com/photos/6803518/pexels-photo-6803518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Testimonial Arrows */
+.bl-personal-section__testimonial-arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bl-personal-section__testimonial-arrow--left {
+    border-left: 20px solid rgb(231 232 236);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: 20px;
+}
+
+.bl-personal-section__testimonial-arrow--right {
+    border-right: 20px solid rgb(231 232 236);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: 20px;
+}
+
+/* Testimonial Content */
+.bl-personal-section__testimonial-content {
+    width: 370px;
+    height: 220px;
+    border-radius: 8px;
+    background-color: #3c486b;
+    padding: 24px;
+    color: white;
+}
+
+.bl-personal-section__testimonial-info {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}

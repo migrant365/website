@@ -1,0 +1,49 @@
+.bl-navbar {
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.bl-navbar__toolbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.bl-navbar__logo-container {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.bl-navbar__logo {
+    width: 120px;
+}
+
+.bl-navbar__menu {
+    display: flex !important;
+    gap: 24px !important;
+}
+
+.bl-navbar__menu-item {
+    font-size: 16px !important;
+    text-transform: capitalize !important;
+    color: #3c486b !important;
+}
+
+.bl-navbar__login-btns {
+    display: flex;
+    gap: 16px;
+    /* Spacing between login buttons */
+}
+
+.bl-navbar__login-btn {
+    color: #3c486b !important;
+    border-color: #3c486b !important;
+    text-transform: none !important;
+    /* Ensure text stays as is */
+}
+
+.bl-navbar__login-btn--contained {
+    background-color: #3c486b !important;
+    color: #ffffff !important;
+    /* Set text color to white */
+}
