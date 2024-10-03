@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'
+        node-version: '16'
     
     - name: Install Firebase CLI
       run: npm install -g firebase-tools
@@ -24,8 +24,8 @@ jobs:
     - name: Install dependencies
       run: npm install --force
 
-    - name: Fix audit
-      run: npm audit fix --force
+    # - name: Fix audit
+    #   run: npm audit fix --force
 
     - name: Build
       run: npm run build
