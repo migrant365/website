@@ -60,7 +60,7 @@ const Navbar = () => {
           </Box>
 
           {/* Login Button */}
-          <Box className="bl-navbar__login-btns">
+          {/* <Box className="bl-navbar__login-btns">
             <Button
               variant="outlined"
               text="Login"
@@ -71,7 +71,7 @@ const Navbar = () => {
               text="Sign Up"
               className="bl-navbar__login-btn bl-navbar__login-btn--contained"
             />
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
     </ThemeProvider>
