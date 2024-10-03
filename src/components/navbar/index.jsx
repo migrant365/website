@@ -10,7 +10,6 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import Button from "../button"; // Assuming this is your custom button component
 import { NavLink } from "react-router-dom"; // Import NavLink
 
 const Navbar = () => {
