@@ -24,4 +24,4 @@ jobs:
     - name: Go to the project directory and deploy to Firebase
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      run: npm install --force && npm run build && firebase deploy --token "$FIREBASE_TOKEN"
+      run: npm install --force && npm audit fix --force && npm run build && firebase deploy --token "$FIREBASE_TOKEN"
