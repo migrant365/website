@@ -11,24 +11,15 @@ import {
   createTheme,
 } from "@mui/material";
 import Button from "../button"; // Assuming this is your custom button component
-import { Link, NavLink } from "react-router-dom"; // Import NavLink
+import { NavLink } from "react-router-dom"; // Import NavLink
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const menuItems = [
     { text: "For Personal", link: "/for-personal" }, // Example link
     { text: "For Business", link: "/for-business" }, // Ensure this path is correct
     { text: "Pricing", link: "/pricing" }, // Ensure this path is correct
     { text: "About Us", link: "/about" },
   ];
-
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
 
   const theme = createTheme({
     typography: {
@@ -54,10 +45,9 @@ const Navbar = () => {
           <Box className="bl-navbar__menu">
             {menuItems.map((item, index) => (
               <NavLink
-                key={index}
+                key={item.text}
                 to={item.link}
                 className={({ isActive }) => {
-                  console.log(`Link to ${item.link} is active: ${isActive}`);
                   return isActive
                     ? "active bl-navbar__menu-item"
                     : "bl-navbar__menu-item";

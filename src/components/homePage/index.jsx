@@ -1,11 +1,7 @@
-import Navbar from "../../components/navbar";
 import HomeSection from "../../components/homeSection";
 import ForPersonalSection from "../../components/forPersonalSection";
 import PortfolioSection from "../../components/portfolioSection";
 import BusinesSection from "../../components/forBusinesSection";
-import Footer from "../../components/footer";
-import { Box, Typography } from "@mui/material";
-import { Copyright } from "@mui/icons-material";
 
 import "../../styles/home.css";
 

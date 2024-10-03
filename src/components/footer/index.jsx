@@ -2,15 +2,7 @@ import { Box, IconButton } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import React from "react";
 import logo from "../../logo.png";
-import {
-  Facebook,
-  FacebookRounded,
-  FacebookTwoTone,
-  GitHub,
-  LinkedIn,
-  Telegram,
-  Twitter,
-} from "@mui/icons-material";
+import { GitHub, LinkedIn, Telegram, Twitter } from "@mui/icons-material";
 
 const Footer = () => {
   return (

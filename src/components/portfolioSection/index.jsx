@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Grid, styled } from "@mui/system";
+import { styled } from "@mui/system";
 
 import borderList from "../../img/borderList.png";
 
@@ -21,7 +21,7 @@ const CarouselContainer = styled(Box)({
   overflow: "hidden",
 });
 
-const CarouselWrapper = styled(Box)(({ translateValue }) => ({
+const CarouselWrapper = styled(Box)(({ theme, translateValue }) => ({
   display: "flex",
   transition: "transform 0.5s ease",
   transform: `translateX(${translateValue}px)`,
@@ -142,7 +142,8 @@ const PortfolioSection = () => {
           <ArrowBackIosIcon />
         </ArrowButton>
 
-        <CarouselWrapper translateValue={translateValue}>
+        <CarouselWrapper
+          style={{ transform: `translateX(${translateValue}px)` }}>
           {items.map((item, index) => (
             <CarouselItem
               sx={{
@@ -155,7 +156,7 @@ const PortfolioSection = () => {
                 position: "relative",
                 backgroundColor: "rgba(60, 72, 107, 0.08)",
               }}
-              key={0}>
+              key={index}>
               <Box sx={{ width: "50%" }}>
                 {item.inProgress && (
                   <Box
