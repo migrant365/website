@@ -1,0 +1,45 @@
+/* App.css */
+.bl-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /* Styles for the App component */
+}
+
+.bl-app__wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding-bottom: 64px;
+  padding-top: 64px;
+}
+
+.bl-app__section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bl-app__footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #3c486b;
+}
+
+.bl-app__footer-info {
+  padding: 10px;
+  width: 1200px;
+}
+
+.bl-app__copyright-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bl-app__background {
+  background-color: #3c486b20;
+}

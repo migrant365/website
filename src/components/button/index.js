@@ -1,10 +1,13 @@
 import React from "react";
 import { Button as MUIButton } from "@mui/material";
 import "../../styles/navbar.css"; // Ensure correct path
+import { Link } from "react-router-dom";
 
-const Button = ({ variant, text, onClick, className }) => {
+const Button = ({ variant, text, onClick, className, to }) => {
   return (
     <MUIButton
+      to={to}
+      component={Link}
       variant={variant}
       onClick={onClick}
       className={className}

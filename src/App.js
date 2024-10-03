@@ -1,87 +1,46 @@
-import Navbar from "./components/navbar";
-import "./App.css";
-import HomeSection from "./components/homeSection";
-import ForPersonalSection from "./components/forPersonalSection";
-import PortfolioSection from "./components/portfolioSection";
-import BusinesSection from "./components/forBusinesSection";
-import Footer from "./components/footer";
-import { Avatar, Box, Typography } from "@mui/material";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importing BrowserRouter
+import Navbar from "./components/navbar"; // Import Navbar if you want to use it
+import Home from "./components/homePage";
+import AboutPage from "./components/aboutPage";
+import { Box, Typography } from "@mui/material";
 import { Copyright } from "@mui/icons-material";
+import Footer from "./components/footer";
+import ForPersonalPage from "./components/forPersonalPage";
+import ForBusinessPage from "./components/forBusinessPage";
+import PricingPage from "./components/PricingPage";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-wrapper" style={{ padding: 0 }}>
-        <Navbar></Navbar>
-      </div>
-      <div className="App-wrapper">
-        <HomeSection />
-      </div>
-      <div
-        className=""
-        style={{
-          backgroundColor: "#3c486b20",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}>
-        <div className="App-wrapper">
-          <ForPersonalSection />
+    <Router>
+      <div className="bl-app">
+        <div className="bl-app__wrapper" style={{ padding: 0 }}>
+          <Navbar />
         </div>
       </div>
-      <div className="App-wrapper">
-        <PortfolioSection />
-      </div>
-      <div
-        className=""
-        style={{
-          backgroundColor: "#3c486b20",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}>
-        <div className="App-wrapper">
-          <BusinesSection />
-        </div>
-      </div>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          borderTop: "1px solid #3c486b",
-          borderBottom: "1px solid #3c486b",
-        }}>
-        <div className="App-wrapper">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/for-personal" element={<ForPersonalPage />} />
+        <Route path="/for-business" element={<ForBusinessPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+      <div className="bl-app__footer">
+        <div className="bl-app__wrapper">
           <Footer />
         </div>
       </div>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          borderTop: "1px solid #3c486b20",
-          borderBottom: "1px solid #3c486b20",
-          backgroundColor: "#3c486b20",
-        }}>
-        <div
-          style={{
-            padding: "10px",
-            width: "1200px",
-          }}>
-          <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
+      <div className="bl-app__footer">
+        <div className="bl-app__footer-info">
+          <Box className="bl-app__copyright-box">
             <Copyright sx={{ color: "#3c486b", fontSize: 14 }} />
-            <Typography
-              sx={{ color: "#3c486b", fontSize: "12px", display: "flex" }}>
+            <Typography sx={{ color: "#3c486b", fontSize: "12px" }}>
               2024 migrant365, All rights reserved
             </Typography>
           </Box>
         </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
 export default App;
-// PortfolioSection

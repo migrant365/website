@@ -7,6 +7,7 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    padding: 0 !important;
 }
 
 .bl-navbar__logo-container {
@@ -20,13 +21,22 @@
 
 .bl-navbar__menu {
     display: flex !important;
-    gap: 24px !important;
+    gap: 4px !important;
+}
+
+.bl-navbar__menu-item.active {
+    border-radius: 6px;
+    /* padding-top: 2px;
+    padding-bottom: 2px; */
+    border: 1px solid #3c486b;
 }
 
 .bl-navbar__menu-item {
     font-size: 16px !important;
     text-transform: capitalize !important;
     color: #3c486b !important;
+    text-decoration: none;
+    padding: 5px 15px;
 }
 
 .bl-navbar__login-btns {
