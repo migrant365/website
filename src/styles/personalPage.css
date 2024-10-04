@@ -1,0 +1,118 @@
+.bl-app__title {
+    color: #3c468b;
+}
+
+.bl-app__subtitle {
+    color: #3c468b99;
+}
+
+.bl-app__step {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 6px;
+    height: 163px;
+}
+
+.bl-app__step-number {
+    width: 26px;
+    height: 26px;
+    padding: 4px;
+    background-color: #3c486b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.bl-app__step-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #3c468b !important;
+}
+
+.bl-app__step-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: #3c468b99;
+}
+
+.bl-app__number {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.bl-app__grid {
+    margin-top: 36px;
+}
+
+.bl-app {
+    /* Styles for the app wrapper */
+}
+
+.bl-app__wrapper {
+    /* Styles for the inner wrapper */
+}
+
+.bl-app__section {
+    /* Styles for section background */
+}
+
+.bl-app__grid {
+    margin-top: 36px;
+    /* Example */
+}
+
+.bl-app__step {
+    border: 1px solid rgba(60, 72, 107, 0.2);
+    /* Example border */
+}
+
+.bl-app__step-number {
+    /* Styles for step number */
+}
+
+.bl-app__number {
+    /* Styles for the number inside step */
+}
+
+.bl-app__step-title {
+    /* Styles for the title of each step */
+}
+
+.bl-app__step-description {
+    /* Styles for the description inside each step */
+}
+
+.bl-app__testimonial-info {
+    display: flex;
+    align-items: center;
+    /* Flexbox for alignment */
+}
+
+.bl-app__button {
+    background: transparent;
+    /* Button styles */
+    border: none;
+    /* Example */
+}
+
+.bl-app__carousel {
+    margin-top: 36px;
+    /* Example */
+}
+
+.bl-app__testimonial-comment {
+    color: rgba(60, 72, 107, 0.6);
+    /* Example comment color */
+}
+
+.bl-app__testimonial-name {
+    font-weight: 600;
+    /* Example */
+}
+
+.bl-app__testimonial-company {
+    color: rgba(60, 72, 107, 0.6);
+    /* Example company color */
+}

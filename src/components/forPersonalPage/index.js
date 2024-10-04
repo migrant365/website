@@ -19,6 +19,8 @@ import React from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
+import "../../styles/personalPage.css";
+
 const CarouselContainer = styled(Box)({
   display: "flex",
   alignItems: "center",
@@ -126,17 +128,7 @@ function ForPersonalPage() {
       icon: <PublicTwoTone sx={{ color: "#3c468b80", fontSize: "28px" }} />,
     },
   ];
-  const Title = (title) => (
-    <Typography sx={{ color: "#3c486b" }} variant="h3">
-      {title}
-    </Typography>
-  );
 
-  const Subtitle = (subtitle) => (
-    <Typography sx={{ color: "#3c486b", fontSize: "16px", marginTop: "18px" }}>
-      {subtitle}
-    </Typography>
-  );
   const maxIndex = items.length - visibleItems;
 
   const handleNext = () => {
@@ -149,6 +141,62 @@ function ForPersonalPage() {
 
   // Calculate the translate value based on currentIndex and itemWidth
   const translateValue = -currentIndex * itemWidth;
+
+  const steps = [
+    {
+      title: "Initial Consultation",
+      description:
+        "Discuss your goals, ideas, and requirements for the website. This step helps us understand your vision and gather essential information to start the project.",
+    },
+    {
+      title: "Proposal and Agreement",
+      description:
+        "Based on our discussion, we will create a detailed proposal outlining the project scope, timeline, and costs. Once you agree, we’ll finalize the contract to ensure clarity and mutual understanding.",
+    },
+    {
+      title: "Design Phase",
+      description:
+        "Our design team will create wireframes and mockups for your approval. This is where we focus on layout, color schemes, and overall aesthetics to align with your vision.",
+    },
+    {
+      title: "Development Phase",
+      description:
+        "After design approval, our developers will build your website. This includes coding, integrating features, and ensuring the site is responsive and functional across all devices.",
+    },
+    {
+      title: "Content Creation",
+      description:
+        "After design approval, our developers will build your website. This includes coding, integrating features, and ensuring the site is responsive and functional across all devices.",
+    },
+    {
+      title: "Review and Feedback",
+      description:
+        "Once the website is developed, you’ll have the opportunity to review it. We encourage feedback and will make necessary adjustments to ensure it meets your expectations.",
+    },
+    {
+      title: "Post-Launch Support",
+      description:
+        "Once your site is live, we offer ongoing support to address any issues and provide updates as needed. We also offer maintenance packages to keep your site running smoothly.",
+    },
+    {
+      title: "Training and Handover",
+      description:
+        "We provide training on how to manage and update your website, ensuring you feel confident in using your new platform.",
+    },
+  ];
+
+  const xsValues = [5, 7, 7, 5, 5, 7, 7, 5, 5];
+
+  const Title = (title) => (
+    <Typography className="bl-app__title" variant="h3">
+      {title}
+    </Typography>
+  );
+
+  const Subtitle = (subtitle) => (
+    <Typography className="bl-app__subtitle">{subtitle}</Typography>
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <div className="bl-app">
@@ -208,483 +256,33 @@ function ForPersonalPage() {
         </div>
         <div className="bl-app__section bl-app__background">
           <div className="bl-app__wrapper">
-            <Box sx={{}}>
+            <Box>
               {Title("Service Process")}
               {Subtitle(
                 "Our seamless process to bring your custom website to life, with you every step of the way."
               )}
-              <Grid container spacing={1} sx={{ marginTop: "36px" }}>
-                <Grid item xs={5}>
-                  <Box
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          1
+              <Grid container spacing={1} className="bl-app__grid">
+                {steps.map((step, index) => (
+                  <Grid item xs={xsValues[index]} key={index}>
+                    <Box className="bl-app__step">
+                      <Box sx={{ display: "flex", gap: "8px" }}>
+                        <Box className="bl-app__step-number">
+                          <Typography className="bl-app__number">
+                            {index + 1}
+                          </Typography>
+                        </Box>
+                        <Typography className="bl-app__step-title">
+                          {step.title}
                         </Typography>
                       </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Initial Consultation
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        Discuss your goals, ideas, and requirements for the
-                        website. This step helps us understand your vision and
-                        gather essential information to start the project.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={7}>
-                  <Box
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          2
+                      <Box sx={{ marginTop: "16px" }}>
+                        <Typography className="bl-app__step-description">
+                          {step.description}
                         </Typography>
                       </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Proposal and Agreement
-                      </Typography>
                     </Box>
-
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        Based on our discussion, we will create a detailed
-                        proposal outlining the project scope, timeline, and
-                        costs. Once you agree, we’ll finalize the contract to
-                        ensure clarity and mutual understanding.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={7}>
-                  <Box
-                    sx={{
-                      height: "163px",
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          3
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Design Phase
-                      </Typography>
-                    </Box>
-
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        Our design team will create wireframes and mockups for
-                        your approval. This is where we focus on layout, color
-                        schemes, and overall aesthetics to align with your
-                        vision.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={5}>
-                  <Box
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          4
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Development Phase
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        After design approval, our developers will build your
-                        website. This includes coding, integrating features, and
-                        ensuring the site is responsive and functional across
-                        all devices.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={5}>
-                  <Box
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          5
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Content Creation
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        After design approval, our developers will build your
-                        website. This includes coding, integrating features, and
-                        ensuring the site is responsive and functional across
-                        all devices.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={7}>
-                  <Box
-                    sx={{
-                      height: "163px",
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          6
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Review and Feedback
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        Once the website is developed, you’ll have the
-                        opportunity to review it. We encourage feedback and will
-                        make necessary adjustments to ensure it meets your
-                        expectations.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={7}>
-                  <Box
-                    sx={{
-                      height: "163px",
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          7
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Review and Feedback
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        Once the website is developed, you’ll have the
-                        opportunity to review it. We encourage feedback and will
-                        make necessary adjustments to ensure it meets your
-                        expectations.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={5}>
-                  <Box
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          8
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Post-Launch Support
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        Once your site is live, we offer ongoing support to
-                        address any issues and provide updates as needed. We
-                        also offer maintenance packages to keep your site
-                        running smoothly.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={5}>
-                  <Box
-                    sx={{
-                      backgroundColor: "#ffffff",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
-                    <Box sx={{ display: "flex", gap: "8px" }}>
-                      <Box
-                        sx={{
-                          width: "26px",
-                          height: "26px",
-                          padding: "4px",
-                          backgroundColor: "#3c486b",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderRadius: 1,
-                        }}>
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            fontWeight: "600",
-                            fontSize: "16px",
-                          }}>
-                          9
-                        </Typography>
-                      </Box>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
-                        }}>
-                        Training and Handover
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        We provide training on how to manage and update your
-                        website, ensuring you feel confident in using your new
-                        platform.
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
+                  </Grid>
+                ))}
               </Grid>
             </Box>
           </div>

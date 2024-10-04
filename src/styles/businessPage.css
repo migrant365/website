@@ -1,0 +1,32 @@
+.bl-app__business {
+    position: relative;
+    background-image: url('../img/ai-generated-8910166.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bl-app__business::before {
+    content: "";
+    /* Needed for the pseudo-element */
+    position: absolute;
+    /* Position it absolutely */
+    top: 0;
+    /* Stretch it to the top */
+    left: 0;
+    /* Stretch it to the left */
+    right: 0;
+    /* Stretch it to the right */
+    bottom: 0;
+    /* Stretch it to the bottom */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black with 50% opacity */
+    z-index: 1;
+    /* Ensure it’s above the background but below the content */
+}
+
+.bl-app__wrapper {
+    position: relative;
+    /* Position the content above the overlay */
+    z-index: 2;
+    /* Ensure content is above the overlay */
+}
