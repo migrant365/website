@@ -5,6 +5,34 @@
     background-position: center;
 }
 
+.bl-outlinedInput {
+    width: 100%;
+}
+
+/* CustomTextField.css */
+.bl-outlinedInput .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: #3c586b40 !important;
+    padding: 1px !important;
+    /* Default outline color */
+}
+
+.bl-outlinedInput .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #3c586b40 !important;
+    /* Outline color on hover */
+}
+
+.bl-outlinedInput .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #3c586b40 !important;
+    /* Outline color when focused */
+}
+
+.bl-outlinedInput .MuiOutlinedInput-input {
+    padding: 8px;
+    /* Padding inside the input */
+}
+
+/* .÷ */
+
 .bl-app__business::before {
     content: "";
     /* Needed for the pseudo-element */

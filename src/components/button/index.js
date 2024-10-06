@@ -19,6 +19,7 @@ const Button = ({ variant, text, onClick, className, to }) => {
         "&:hover": {
           backgroundColor: variant === "contained" ? "#5a6b8a" : undefined,
         },
+        fontWeight: "600",
       }}>
       {text}
     </MUIButton>

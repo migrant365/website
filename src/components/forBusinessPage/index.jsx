@@ -2,6 +2,7 @@ import {
   Box,
   createTheme,
   Grid,
+  TextField,
   ThemeProvider,
   Typography,
 } from "@mui/material";
@@ -16,6 +17,7 @@ import mobileDevelopment from "../../img/mobile-development.png";
 import reliability from "../../img/reliability.png";
 import flexible from "../../img/flexible.png";
 import value from "../../img/value.png";
+import Button from "../button";
 
 function ForBusinessPage() {
   const theme = createTheme({
@@ -215,6 +217,67 @@ function ForBusinessPage() {
               ))}
             </Grid>
           </div>
+        </div>
+        <div
+          style={{ display: "flex", justifyContent: "center" }}
+          className="bl-app__wrapper">
+          <Box
+            sx={{
+              width: "50%",
+              textAlign: "center",
+              backgroundColor: "#3c486b20",
+              padding: "36px",
+              borderRadius: 2,
+            }}>
+            {Title("Bring Your Ideas to Life")}
+            {Subtitle(
+              "Start Your Project Today with Our Expert Team. We’re Ready to Collaborate and Build Solutions That Drive Real Results."
+            )}
+            <Box sx={{ marginTop: "36px" }}>
+              <Grid container spacing={2}>
+                <Grid item xs={6}>
+                  <TextField
+                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                    variant={"outlined"}
+                    placeholder="Name"
+                    className={"bl-outlinedInput"}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <TextField
+                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                    variant={"outlined"}
+                    placeholder="Surname"
+                    className={"bl-outlinedInput"}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                    variant={"outlined"}
+                    placeholder="How contact with you?"
+                    className={"bl-outlinedInput"}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                    variant={"outlined"}
+                    placeholder="Text message..."
+                    className={"bl-outlinedInput"}
+                    multiline
+                    rows={4}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sx={{ display: "flex", justifyContent: "flex-end" }}>
+                  <Button variant={"contained"} text={"Send"} />
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
         </div>
       </div>
     </ThemeProvider>
