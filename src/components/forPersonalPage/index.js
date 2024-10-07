@@ -20,6 +20,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import "../../styles/personalPage.css";
+import { Helmet } from "react-helmet";
 
 const CarouselContainer = styled(Box)({
   display: "flex",
@@ -198,166 +199,174 @@ function ForPersonalPage() {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="bl-app">
-        <div className="bl-app__wrapper">
-          {Title("Introduction")}
-          {Subtitle(
-            `Looking for a personal website to showcase your brand, portfolio, or
+    <>
+      <Helmet>
+        <title>For Personal - Migrant365</title>
+      </Helmet>
+      <ThemeProvider theme={theme}>
+        <div className="bl-app">
+          <div className="bl-app__wrapper">
+            {Title("Introduction")}
+            {Subtitle(
+              `Looking for a personal website to showcase your brand, portfolio, or
             blog? We specialize in creating beautifully designed, fully
             customized websites that reflect your unique style and needs.
             Whether you're a freelancer, artist, or blogger, our team will build
             a site that not only looks great but performs seamlessly.`
-          )}
+            )}
 
-          <Grid container spacing={3} sx={{ marginTop: "36px" }}>
-            {listOfServices.map((elem, ind) => {
-              return (
-                <Grid item xs key={ind}>
-                  <Box
-                    sx={{
-                      height: "100%",
-                      width: "100%",
-                      backgroundColor: "#3c486b10",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
+            <Grid container spacing={3} sx={{ marginTop: "36px" }}>
+              {listOfServices.map((elem, ind) => {
+                return (
+                  <Grid item xs key={ind}>
                     <Box
                       sx={{
-                        display: "flex",
-                        gap: "8px",
-                        alignItems: "center",
+                        height: "100%",
+                        width: "100%",
+                        backgroundColor: "#3c486b10",
+                        padding: "24px",
+                        borderRadius: "6px",
                       }}>
-                      {elem.icon}
-                      <Typography
+                      <Box
                         sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
+                          display: "flex",
+                          gap: "8px",
+                          alignItems: "center",
                         }}>
-                        {elem.title}
-                      </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
-                        {elem.subtitle}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </div>
-        <div className="bl-app__section bl-app__background">
-          <div className="bl-app__wrapper">
-            <Box>
-              {Title("Service Process")}
-              {Subtitle(
-                "Our seamless process to bring your custom website to life, with you every step of the way."
-              )}
-              <Grid container spacing={1} className="bl-app__grid">
-                {steps.map((step, index) => (
-                  <Grid item xs={xsValues[index]} key={index}>
-                    <Box className="bl-app__step">
-                      <Box sx={{ display: "flex", gap: "8px" }}>
-                        <Box className="bl-app__step-number">
-                          <Typography className="bl-app__number">
-                            {index + 1}
-                          </Typography>
-                        </Box>
-                        <Typography className="bl-app__step-title">
-                          {step.title}
+                        {elem.icon}
+                        <Typography
+                          sx={{
+                            fontSize: "18px",
+                            fontWeight: "600",
+                            color: "#3c468b",
+                          }}>
+                          {elem.title}
                         </Typography>
                       </Box>
                       <Box sx={{ marginTop: "16px" }}>
-                        <Typography className="bl-app__step-description">
-                          {step.description}
+                        <Typography
+                          sx={{
+                            fontSize: "18px",
+                            fontWeight: "400",
+                            color: "#3c468b99",
+                          }}>
+                          {elem.subtitle}
                         </Typography>
                       </Box>
                     </Box>
                   </Grid>
-                ))}
-              </Grid>
-            </Box>
+                );
+              })}
+            </Grid>
           </div>
-        </div>
-        <div className="bl-app__wrapper">
-          {Title("Testimonials")}{" "}
-          {Subtitle(
-            "Real stories from satisfied clients who brought their ideas to life with our help."
-          )}
-          <CarouselContainer sx={{ marginTop: "36px" }}>
-            <ArrowButton
-              onClick={handlePrev}
-              style={{
-                left: "0px",
-                background:
-                  "linear-gradient(90deg, rgba(255,255,255,1) 27%, rgba(255,255,255,0) 100%)",
-              }}
-              disabled={currentIndex === 0}>
-              <ArrowBackIosIcon />
-            </ArrowButton>
-
-            <CarouselWrapper
-              style={{ transform: `translateX(${translateValue}px)` }}>
-              {items.map((item, index) => (
-                <CarouselItem
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    border: "1px solid #3c486b20",
-                    paddingLeft: "24px",
-                    paddingRight: "24px",
-                    position: "relative",
-                    backgroundColor: "rgba(60, 72, 107, 0.08)",
-                  }}
-                  key={index}>
-                  <Box sx={{}}>
-                    <Typography color="#3c486b99">{item.comment}</Typography>
-                    <Typography fontWeight={500} color="#3c486b" fontSize={22}>
-                      <Box className="bl-home-section__testimonial-info">
-                        <Avatar alt="Remy Sharp" src={item.image} />
-                        <Box className="bl-home-section__testimonial-user">
-                          <Typography
-                            fontWeight={600}
-                            className="bl-home-section__testimonial-name">
-                            {item.name}
+          <div className="bl-app__section bl-app__background">
+            <div className="bl-app__wrapper">
+              <Box>
+                {Title("Service Process")}
+                {Subtitle(
+                  "Our seamless process to bring your custom website to life, with you every step of the way."
+                )}
+                <Grid container spacing={1} className="bl-app__grid">
+                  {steps.map((step, index) => (
+                    <Grid item xs={xsValues[index]} key={index}>
+                      <Box className="bl-app__step">
+                        <Box sx={{ display: "flex", gap: "8px" }}>
+                          <Box className="bl-app__step-number">
+                            <Typography className="bl-app__number">
+                              {index + 1}
+                            </Typography>
+                          </Box>
+                          <Typography className="bl-app__step-title">
+                            {step.title}
                           </Typography>
-                          <Typography
-                            sx={{ color: "#3c486b99" }}
-                            variant="body2"
-                            className="bl-home-section__testimonial-company">
-                            {item.profession}
+                        </Box>
+                        <Box sx={{ marginTop: "16px" }}>
+                          <Typography className="bl-app__step-description">
+                            {step.description}
                           </Typography>
                         </Box>
                       </Box>
-                    </Typography>
-                  </Box>
-                </CarouselItem>
-              ))}
-            </CarouselWrapper>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            </div>
+          </div>
+          <div className="bl-app__wrapper">
+            {Title("Testimonials")}{" "}
+            {Subtitle(
+              "Real stories from satisfied clients who brought their ideas to life with our help."
+            )}
+            <CarouselContainer sx={{ marginTop: "36px" }}>
+              <ArrowButton
+                onClick={handlePrev}
+                style={{
+                  left: "0px",
+                  background:
+                    "linear-gradient(90deg, rgba(255,255,255,1) 27%, rgba(255,255,255,0) 100%)",
+                }}
+                disabled={currentIndex === 0}>
+                <ArrowBackIosIcon />
+              </ArrowButton>
 
-            <ArrowButton
-              onClick={handleNext}
-              style={{
-                right: "0px",
-                background:
-                  "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)",
-              }}
-              disabled={currentIndex >= maxIndex}>
-              <ArrowForwardIosIcon />
-            </ArrowButton>
-          </CarouselContainer>
+              <CarouselWrapper
+                style={{ transform: `translateX(${translateValue}px)` }}>
+                {items.map((item, index) => (
+                  <CarouselItem
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      border: "1px solid #3c486b20",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      position: "relative",
+                      backgroundColor: "rgba(60, 72, 107, 0.08)",
+                    }}
+                    key={index}>
+                    <Box sx={{}}>
+                      <Typography color="#3c486b99">{item.comment}</Typography>
+                      <Typography
+                        fontWeight={500}
+                        color="#3c486b"
+                        fontSize={22}>
+                        <Box className="bl-home-section__testimonial-info">
+                          <Avatar alt="Remy Sharp" src={item.image} />
+                          <Box className="bl-home-section__testimonial-user">
+                            <Typography
+                              fontWeight={600}
+                              className="bl-home-section__testimonial-name">
+                              {item.name}
+                            </Typography>
+                            <Typography
+                              sx={{ color: "#3c486b99" }}
+                              variant="body2"
+                              className="bl-home-section__testimonial-company">
+                              {item.profession}
+                            </Typography>
+                          </Box>
+                        </Box>
+                      </Typography>
+                    </Box>
+                  </CarouselItem>
+                ))}
+              </CarouselWrapper>
+
+              <ArrowButton
+                onClick={handleNext}
+                style={{
+                  right: "0px",
+                  background:
+                    "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)",
+                }}
+                disabled={currentIndex >= maxIndex}>
+                <ArrowForwardIosIcon />
+              </ArrowButton>
+            </CarouselContainer>
+          </div>
         </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </>
   );
 }
 

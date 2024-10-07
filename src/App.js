@@ -8,74 +8,34 @@ import Footer from "./components/footer";
 import ForPersonalPage from "./components/forPersonalPage";
 import ForBusinessPage from "./components/forBusinessPage";
 import PricingPage from "./components/PricingPage";
-import SEO from "./components/SEO";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <Router>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Migrant365 - Web & Mobile Development, SEO, and Design Services"
+        />
+        <meta
+          name="keywords"
+          content="migrant, migrant365, migrant 365, web development, mobile development, design, SEO, Migrant365"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
       <div className="bl-app">
         <div className="bl-app__wrapper" style={{ padding: 0 }}>
           <Navbar />
         </div>
       </div>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <SEO title="migrant365 - Home" url="https://migrant365.org/" />
-              <Home />
-            </>
-          }
-        />
-        <Route
-          path="/for-personal"
-          element={
-            <>
-              <SEO
-                title="migrant365 - For Personal"
-                url="https://migrant365.org/for-personal"
-              />
-              <ForPersonalPage />
-            </>
-          }
-        />
-        <Route
-          path="/for-business"
-          element={
-            <>
-              <SEO
-                title="migrant365 - For Business"
-                url="https://migrant365.org/for-business"
-              />
-              <ForBusinessPage />
-            </>
-          }
-        />
-        <Route
-          path="/pricing"
-          element={
-            <>
-              <SEO
-                title="migrant365 - Pricing"
-                url="https://migrant365.org/pricing"
-              />
-              <PricingPage />
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <SEO
-                title="migrant365 - About"
-                url="https://migrant365.org/about"
-              />
-              <AboutPage />
-            </>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/for-personal" element={<ForPersonalPage />} />
+        <Route path="/for-business" element={<ForBusinessPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <div className="bl-app__footer">
         <div className="bl-app__wrapper">

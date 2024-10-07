@@ -18,6 +18,7 @@ import reliability from "../../img/reliability.png";
 import flexible from "../../img/flexible.png";
 import value from "../../img/value.png";
 import Button from "../button";
+import { Helmet } from "react-helmet";
 
 function ForBusinessPage() {
   const theme = createTheme({
@@ -94,193 +95,198 @@ function ForBusinessPage() {
     },
   ];
   return (
-    <ThemeProvider theme={theme}>
-      <div className="bl-app">
-        <div className="bl-app__business bl-app__section bl-app__background">
-          <div className="bl-app__wrapper">
-            <Box
-              sx={{
-                padding: "84px",
-              }}>
-              <Typography
-                color="#fff"
-                variant="h3"
-                textAlign={"center"}
-                fontWeight={700}>
-                Elevate Your Business with Custom Web Solutions
-              </Typography>
-              <Typography
-                color="#fff"
-                textAlign={"center"}
-                fontWeight={700}
-                className="bl-app__subtitle">
-                In today's digital landscape, a strong online presence is
-                crucial for success. Our team specializes in creating custom web
-                solutions that meet the unique needs of your business, helping
-                you stand out and thrive.
-              </Typography>
-            </Box>
+    <>
+      <Helmet>
+        <title>For Business - Migrant365</title>
+      </Helmet>
+      <ThemeProvider theme={theme}>
+        <div className="bl-app">
+          <div className="bl-app__business bl-app__section bl-app__background">
+            <div className="bl-app__wrapper">
+              <Box
+                sx={{
+                  padding: "84px",
+                }}>
+                <Typography
+                  color="#fff"
+                  variant="h3"
+                  textAlign={"center"}
+                  fontWeight={700}>
+                  Elevate Your Business with Custom Web Solutions
+                </Typography>
+                <Typography
+                  color="#fff"
+                  textAlign={"center"}
+                  fontWeight={700}
+                  className="bl-app__subtitle">
+                  In today's digital landscape, a strong online presence is
+                  crucial for success. Our team specializes in creating custom
+                  web solutions that meet the unique needs of your business,
+                  helping you stand out and thrive.
+                </Typography>
+              </Box>
+            </div>
           </div>
-        </div>
-        <div className="bl-app__wrapper">
-          {Title("Our Expertise at Your Service")}
-          {Subtitle(
-            "Comprehensive Solutions Tailored to Elevate Your Business"
-          )}
-          <Grid container spacing={3} sx={{ marginTop: "36px" }}>
-            {listOfServices.map((elem, ind) => {
-              return (
-                <Grid item xs={4} key={ind}>
-                  <Box
-                    sx={{
-                      height: "100%",
-                      width: "100%",
-                      backgroundColor: "#3c486b10",
-                      padding: "24px",
-                      borderRadius: "6px",
-                    }}>
+          <div className="bl-app__wrapper">
+            {Title("Our Expertise at Your Service")}
+            {Subtitle(
+              "Comprehensive Solutions Tailored to Elevate Your Business"
+            )}
+            <Grid container spacing={3} sx={{ marginTop: "36px" }}>
+              {listOfServices.map((elem, ind) => {
+                return (
+                  <Grid item xs={4} key={ind}>
                     <Box
                       sx={{
-                        display: "flex",
-                        gap: "8px",
-                        alignItems: "center",
+                        height: "100%",
+                        width: "100%",
+                        backgroundColor: "#3c486b10",
+                        padding: "24px",
+                        borderRadius: "6px",
                       }}>
                       <Box
                         sx={{
-                          padding: "6px",
                           display: "flex",
+                          gap: "8px",
                           alignItems: "center",
-                          justifyContent: "center",
-                          backgroundColor: "#fff",
-                          width: "72px",
-                          height: "72px",
-                          borderRadius: "6px",
                         }}>
-                        {elem.icon}
+                        <Box
+                          sx={{
+                            padding: "6px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            backgroundColor: "#fff",
+                            width: "72px",
+                            height: "72px",
+                            borderRadius: "6px",
+                          }}>
+                          {elem.icon}
+                        </Box>
+                        <Typography
+                          sx={{
+                            fontSize: "18px",
+                            fontWeight: "600",
+                            color: "#3c468b",
+                          }}>
+                          {elem.title}
+                        </Typography>
                       </Box>
+                      <Box sx={{ marginTop: "16px" }}>
+                        <Typography
+                          sx={{
+                            fontSize: "18px",
+                            fontWeight: "400",
+                            color: "#3c468b99",
+                          }}>
+                          {elem.subtitle}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </div>
+          <div className="bl-app__section bl-app__background">
+            <div className="bl-app__wrapper">
+              {Title("Why choose Us?")}
+              {Subtitle(
+                "Discover the Advantages of Partnering with Our Web Development Team"
+              )}
+              <Grid container spacing={7} sx={{ marginTop: "36px" }}>
+                {whyChooseUs.map((elem, index) => (
+                  <Grid item xs key={index}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        gap: "12px",
+                      }}>
+                      <img src={elem.image} width={52} alt={elem.title} />
                       <Typography
                         sx={{
-                          fontSize: "18px",
-                          fontWeight: "600",
-                          color: "#3c468b",
+                          fontSize: "22px",
+                          fontWeight: "700",
+                          color: "#3c486b",
                         }}>
                         {elem.title}
                       </Typography>
-                    </Box>
-                    <Box sx={{ marginTop: "16px" }}>
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          fontWeight: "400",
-                          color: "#3c468b99",
-                        }}>
+                      <Typography color="#3c486b99" textAlign={"center"}>
                         {elem.subtitle}
                       </Typography>
                     </Box>
-                  </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+          </div>
+          <div
+            style={{ display: "flex", justifyContent: "center" }}
+            className="bl-app__wrapper">
+            <Box
+              sx={{
+                width: "50%",
+                textAlign: "center",
+                backgroundColor: "#3c486b20",
+                padding: "36px",
+                borderRadius: 2,
+              }}>
+              {Title("Bring Your Ideas to Life")}
+              {Subtitle(
+                "Start Your Project Today with Our Expert Team. We’re Ready to Collaborate and Build Solutions That Drive Real Results."
+              )}
+              <Box sx={{ marginTop: "36px" }}>
+                <Grid container spacing={2}>
+                  <Grid item xs={6}>
+                    <TextField
+                      sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                      variant={"outlined"}
+                      placeholder="Name"
+                      className={"bl-outlinedInput"}
+                    />
+                  </Grid>
+                  <Grid item xs={6}>
+                    <TextField
+                      sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                      variant={"outlined"}
+                      placeholder="Surname"
+                      className={"bl-outlinedInput"}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                      variant={"outlined"}
+                      placeholder="How contact with you?"
+                      className={"bl-outlinedInput"}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
+                      variant={"outlined"}
+                      placeholder="Text message..."
+                      className={"bl-outlinedInput"}
+                      multiline
+                      rows={4}
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    sx={{ display: "flex", justifyContent: "flex-end" }}>
+                    <Button variant={"contained"} text={"Send"} />
+                  </Grid>
                 </Grid>
-              );
-            })}
-          </Grid>
-        </div>
-        <div className="bl-app__section bl-app__background">
-          <div className="bl-app__wrapper">
-            {Title("Why choose Us?")}
-            {Subtitle(
-              "Discover the Advantages of Partnering with Our Web Development Team"
-            )}
-            <Grid container spacing={7} sx={{ marginTop: "36px" }}>
-              {whyChooseUs.map((elem, index) => (
-                <Grid item xs key={index}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      flexDirection: "column",
-                      gap: "12px",
-                    }}>
-                    <img src={elem.image} width={52} alt={elem.title} />
-                    <Typography
-                      sx={{
-                        fontSize: "22px",
-                        fontWeight: "700",
-                        color: "#3c486b",
-                      }}>
-                      {elem.title}
-                    </Typography>
-                    <Typography color="#3c486b99" textAlign={"center"}>
-                      {elem.subtitle}
-                    </Typography>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
+              </Box>
+            </Box>
           </div>
         </div>
-        <div
-          style={{ display: "flex", justifyContent: "center" }}
-          className="bl-app__wrapper">
-          <Box
-            sx={{
-              width: "50%",
-              textAlign: "center",
-              backgroundColor: "#3c486b20",
-              padding: "36px",
-              borderRadius: 2,
-            }}>
-            {Title("Bring Your Ideas to Life")}
-            {Subtitle(
-              "Start Your Project Today with Our Expert Team. We’re Ready to Collaborate and Build Solutions That Drive Real Results."
-            )}
-            <Box sx={{ marginTop: "36px" }}>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <TextField
-                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
-                    variant={"outlined"}
-                    placeholder="Name"
-                    className={"bl-outlinedInput"}
-                  />
-                </Grid>
-                <Grid item xs={6}>
-                  <TextField
-                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
-                    variant={"outlined"}
-                    placeholder="Surname"
-                    className={"bl-outlinedInput"}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
-                    variant={"outlined"}
-                    placeholder="How contact with you?"
-                    className={"bl-outlinedInput"}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    sx={{ backgroundColor: "#ffffff70", borderRadius: "6px" }}
-                    variant={"outlined"}
-                    placeholder="Text message..."
-                    className={"bl-outlinedInput"}
-                    multiline
-                    rows={4}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sx={{ display: "flex", justifyContent: "flex-end" }}>
-                  <Button variant={"contained"} text={"Send"} />
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-        </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </>
   );
 }
 
