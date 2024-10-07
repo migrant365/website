@@ -34,7 +34,16 @@ const Navbar = () => {
           {/* Logo Section */}
           <NavLink to={"/"}>
             <Box className="bl-navbar__logo-container">
-              <IconButton>
+              <IconButton
+                disableRipple
+                sx={{
+                  backgroundColor: "transparent", // Transparent background
+                  padding: 0, // No padding
+                  "&:hover": {
+                    // Styles on hover
+                    backgroundColor: "rgba(0, 0, 0, 0)", // Slight background on hover
+                  },
+                }}>
                 <img src={logo} alt="Logo" className="bl-navbar__logo" />
               </IconButton>
             </Box>

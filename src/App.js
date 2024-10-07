@@ -8,6 +8,7 @@ import Footer from "./components/footer";
 import ForPersonalPage from "./components/forPersonalPage";
 import ForBusinessPage from "./components/forBusinessPage";
 import PricingPage from "./components/PricingPage";
+import SEO from "./components/SEO";
 
 function App() {
   return (
@@ -18,11 +19,63 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/for-personal" element={<ForPersonalPage />} />
-        <Route path="/for-business" element={<ForBusinessPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <SEO title="migrant365 - Home" url="https://migrant365.org/" />
+              <Home />
+            </>
+          }
+        />
+        <Route
+          path="/for-personal"
+          element={
+            <>
+              <SEO
+                title="migrant365 - For Personal"
+                url="https://migrant365.org/for-personal"
+              />
+              <ForPersonalPage />
+            </>
+          }
+        />
+        <Route
+          path="/for-business"
+          element={
+            <>
+              <SEO
+                title="migrant365 - For Business"
+                url="https://migrant365.org/for-business"
+              />
+              <ForBusinessPage />
+            </>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <>
+              <SEO
+                title="migrant365 - Pricing"
+                url="https://migrant365.org/pricing"
+              />
+              <PricingPage />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <SEO
+                title="migrant365 - About"
+                url="https://migrant365.org/about"
+              />
+              <AboutPage />
+            </>
+          }
+        />
       </Routes>
       <div className="bl-app__footer">
         <div className="bl-app__wrapper">
