@@ -24,10 +24,14 @@ const HomeSection = () => {
             <Typography
               variant="subtitle1"
               className="bl-home-section__subtitle"
-              textTransform="uppercase">
+              textTransform="uppercase"
+              component={"h2"}>
               Peace of mind for your business
             </Typography>
-            <Typography variant="h2" className="bl-home-section__title">
+            <Typography
+              variant="h2"
+              className="bl-home-section__title"
+              component={"h1"}>
               Try an easy way to manage your business
             </Typography>
             <Box className="bl-home-section__text-container">
@@ -63,6 +67,7 @@ const HomeSection = () => {
                 <Avatar
                   alt="Remy Sharp"
                   src="https://mighty.tools/mockmind-api/content/human/49.jpg"
+                  aria-label="Remy Sharp's testimonial"
                 />
                 <Box className="bl-home-section__testimonial-user">
                   <Typography className="bl-home-section__testimonial-name">

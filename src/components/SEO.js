@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const SEO = ({
   title = "migrant365 - Your Digital Partner for Web Development, Mobile Apps, and SEO",
-  description = "Discover top-notch web and mobile development solutions tailored to your business needs. Our expert team specializes in stunning web design, mobile app development, and effective SEO strategies to enhance your online presence and drive growth. Partner with us for innovative, user-friendly solutions that elevate your brand.",
+  description = "Top-notch web and mobile development solutions. Specializing in web design, mobile apps, and SEO to enhance your online presence and drive growth.",
   keywords = "migrant, migrant 365, migrant365, Web Development, Mobile Development, Web Design, Mobile App Development, SEO Services, Digital Marketing, Responsive Web Design, E-commerce Development, UI/UX Design, Custom Software Development, Search Engine Optimization, Social Media Marketing, Content Management Systems (CMS), Website Maintenance, Cross-Platform Development, Cloud Solutions, Web Applications, SEO Strategy, Brand Development, Analytics and Reporting",
   image = "https://example.com/default-image.jpg", // Fallback image
   url = "https://migrant365.org",
